@@ -23,13 +23,13 @@ export default function About({merchants}) {
   return (
     <PageLayout title={t('title')}>
       <p>
-        {t('description', {
+        {t.rich('description', {
           locale,
           code: (children) => <Code>{children}</Code>,
         })}
       </p>
       <p>
-        {t('lastUpdated', {
+        {t.rich('lastUpdated', {
           lastUpdated,
           lastUpdatedRelative: intl.formatRelativeTime(lastUpdated),
         })}
