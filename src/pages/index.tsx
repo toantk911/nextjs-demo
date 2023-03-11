@@ -114,7 +114,7 @@ export default function Home() {
               Type OTP <span>-&gt;</span>
             </h2>
             <p className={inter.className}>
-              Type OTP on your authenticator app or on SMS sent to your phone. If you don't have OTP, click "OTP" button.
+              Type OTP on your authenticator app or on SMS sent to your phone. If you don&apos;t have OTP, click &quot;OTP&quot; button.
             </p>
             <input type="text" placeholder="OTP" onChange={(e) => setOtp(e.target.value)} />
             <br />
