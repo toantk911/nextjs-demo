@@ -147,6 +147,24 @@ export default function Home() {
         <div className={styles.center}>
           <p className={inter.className} style={{color: 'red'}}>{error}</p>
         </div>
+
+        <div className={styles.grid} style={{gridTemplateColumns: "none"}}>
+          <h2 className={inter.className}>{orders.length} orders</h2>
+          {orders.map((order) => (
+            <div key={order.orderId} className={styles.card}>
+              <h3 className={inter.className}>Order # {order.orderId}</h3>
+              <p className={inter.className}>Total: {order.price}</p>
+              <p className={inter.className}>Order placed: {order.date}</p>
+              
+              {(order.items as any[]).map((item, index) => (
+                <div key={`${order.orderId}-${index}`} className={styles.card}>
+                  <p className={inter.className} style={{maxWidth: "none"}}>Item: {item.title}</p>
+                  <p className={inter.className} style={{maxWidth: "none"}}>Link: {item.link}</p>
+                </div>
+              ))}
+            </div>
+          ))}
+        </div>
       </main>
     </>
   )
